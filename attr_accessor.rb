@@ -14,12 +14,23 @@ class Square
   end
 
   def to_s
-    puts "Side Length: #{side_length}\nPerimeter: #{perimeter}\nArea: #{area}"
+    return "Side Length: #{side_length}\nPerimeter: #{perimeter}\nArea: #{area}"
   end
+
+  def draw
+    side_length.times do 
+      middle_line = "* " * (side_length - 2)
+      line = "* " + middle_line + "*"
+      puts line
+    end
+  end
+  
   
 end
 
 sq = Square.new(20)
 puts sq
+sq.draw
 sq.side_length = 25
 puts sq
+sq.draw
